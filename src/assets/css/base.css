@@ -1,7 +1,4 @@
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+/* CSS Reset Ref:https://www.joshwcomeau.com/css/custom-css-reset */
 *,
 *::before,
 *::after {
@@ -53,4 +50,10 @@ h6 {
 ul,
 ol {
   list-style: none;
+}
+
+/* End of CSS Reset */
+
+html {
+  font-size: 62.5%;
 }
