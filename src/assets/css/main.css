@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;800&display=swap");
 
-@import './base.css';
+@import "./base.css";
 
 :root {
   --color-primary-red: hsl(1, 90%, 64%);
@@ -15,15 +15,27 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 1.6rem;
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 1.2rem;
   text-align: center;
+  padding: 1rem;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
 }
