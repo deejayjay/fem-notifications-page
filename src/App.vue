@@ -12,55 +12,170 @@
       <button type="button"
               class="btn-read">Mark all as read</button>
     </div>
-
+    <!-- List of notifications -->
     <ul>
       <li>
-        <article>
-          <h2>Mark Webber reacted to your recent post My first tournament today!</h2>
-          <p>1m ago</p>
+        <article class="notification notification--unread">
+          <picture>
+            <source srcset="./assets/images/avatar-mark-webber.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-mark-webber.webp"
+                 alt="Avatar of Mark Webber"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Mark Webber</span> reacted to your recent post
+              <strong class="notification__post">My first tournament today!</strong>
+              <span class="notification__indicator"></span>
+            </h2>
+            <p class="notification__time">1m ago</p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Angela Gray followed you</h2>
-          <p>5m ago</p>
+        <article class="notification notification--unread">
+          <picture>
+            <source srcset="./assets/images/avatar-angela-gray.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-angela-gray.webp"
+                 alt="Avatar of Angela Gray"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Angela Gray</span> followed you
+              <span class="notification__indicator"></span>
+            </h2>
+            <p class="notification__time">5m ago</p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Jacob Thompson has joined your group Chess Club</h2>
-          <p>1 day ago</p>
+        <article class="notification notification--unread">
+          <picture>
+            <source srcset="./assets/images/avatar-jacob-thompson.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-jacob-thompson.webp"
+                 alt="Avatar of Jacob Thompson"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Jacob Thompson</span> has joined your group
+              <a href="#"
+                 class="notification__group">Chess Club</a>
+              <span class="notification__indicator"></span>
+            </h2>
+            <p class="notification__time">1 day ago</p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Rizky Hasanuddin sent you a private message</h2>
-          <p>5 days ago</p>
-          <p>
-            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
-            I'm already having lots of fun and improving my game.
-          </p>
+        <article class="notification">
+          <picture>
+            <source srcset="./assets/images/avatar-rizky-hasanuddin.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-rizky-hasanuddin.webp"
+                 alt="Avatar of Rizky Hasanuddin"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Rizky Hasanuddin</span> sent you a private message
+            </h2>
+            <p class="notification__time">5 days ago</p>
+            <p class="notification__private-message">
+              Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+              I'm already having lots of fun and improving my game.
+            </p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Kimberly Smith commented on your picture</h2>
-          <p>1 week ago</p>
+        <article class="notification">
+          <picture>
+            <source srcset="./assets/images/avatar-kimberly-smith.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-kimberly-smith.webp"
+                 alt="Avatar of Kimberly Smith"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Kimberly Smith</span> commented on your picture
+            </h2>
+            <p class="notification__time">1 week ago</p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate</h2>
-          <p>2 weeks ago</p>
+        <article class="notification">
+          <picture>
+            <source srcset="./assets/images/avatar-nathan-peterson.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-nathan-peterson.webp"
+                 alt="Avatar of Nathan Peterson"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Nathan Peterson</span> reacted to your recent post
+              <strong class="notification__post ml--3">5 end-game strategies to increase your win rate</strong>
+            </h2>
+            <p class="notification__time">2 weeks ago</p>
+          </section>
         </article>
       </li>
       <li>
-        <article>
-          <h2>Anna Kim left the group Chess Club</h2>
-          <p>2 weeks ago</p>
+        <article class="notification">
+          <picture>
+            <source srcset="./assets/images/avatar-anna-kim.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/avatar-anna-kim.webp"
+                 alt="Avatar of Anna Kim"
+                 class="notification__avatar"
+                 width="39"
+                 height="39">
+          </picture>
+          <section class="notification__content">
+            <h2 class="notification__title">
+              <span class="notification__author">Anna Kim</span> left the group
+              <a href="#"
+                 class="notification__group">Chess Club</a>
+            </h2>
+            <p class="notification__time">2 weeks ago</p>
+          </section>
         </article>
       </li>
     </ul>
+    <!-- End of list of notifications -->
   </main>
   <footer class="attribution">
     <p>
@@ -116,11 +231,88 @@
   outline: 2px solid transparent;
   transition: outline-color 0.3s;
   font-size: 1.4rem;
-  font-weight: 500;
   color: var(--color-dark-grayish-blue);
 }
 
 .btn-read:focus-visible {
   outline-color: var(--color-dark-grayish-blue);
+}
+
+.notification {
+  font-size: 1.4rem;
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 1.3rem;
+  margin-bottom: 1rem;
+  padding: 1.6rem;
+  border-radius: 8px;
+}
+
+.notification--unread {
+  background-color: var(--color-very-light-grayish-blue);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.notification__content {
+  line-height: 1.275;
+  color: var(--color-dark-grayish-blue);
+}
+
+.notification__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary-red);
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.notification__author {
+  font-weight: 800;
+  color: var(--color-very-dark-blue);
+  margin-right: 0.6rem;
+}
+
+.notification__post,
+.notification__group {
+  font-weight: 800;
+  margin-left: 0.6rem;
+}
+
+.ml--3 {
+  margin-left: 0.3rem;
+}
+
+.notification__group {
+  text-decoration: none;
+  color: var(--color-primary-blue);
+}
+
+.notification__time {
+  margin-top: 0.4rem;
+  color: var(--color-grayish-blue);
+}
+
+.notification__avatar {
+  width: 39px;
+  height: 39px;
+}
+
+.notification__private-message {
+  border: 1px solid var(--color-light-grayish-blue-2);
+  border-radius: 5px;
+  padding: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+@media only screen and (width >=1024px) {
+  .notification {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .notification__avatar {
+    width: 45px;
+    height: 45px;
+  }
 }
 </style>
