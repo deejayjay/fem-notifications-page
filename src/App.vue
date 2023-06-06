@@ -1,5 +1,19 @@
 <script>
-
+export default {
+  name: 'App',
+  data() {
+    return {
+      areAllMessagesRead: false,
+      noOfNotifications: 3
+    }
+  },
+  methods: {
+    markAllAsReadHandler() {
+      this.areAllMessagesRead = true;
+      this.noOfNotifications = 0;
+    }
+  }
+}
 </script>
 
 <template>
@@ -7,15 +21,18 @@
     <div class="title-bar">
       <div class="title-bar__left">
         <h1 class="title">Notifications</h1>
-        <span class="title__notifications">3</span>
+        <span class="title__notifications">{{ noOfNotifications }}</span>
       </div>
       <button type="button"
-              class="btn-read">Mark all as read</button>
+              class="btn-read"
+              :disabled="areAllMessagesRead"
+              @click="markAllAsReadHandler">Mark all as read</button>
     </div>
     <!-- List of notifications -->
     <ul class="notifications-list">
       <li class="notifications-list-item">
-        <article class="notification notification--unread">
+        <article class="notification"
+                 :class="{ 'notification--unread': !areAllMessagesRead }">
           <picture>
             <source srcset="./assets/images/avatar-mark-webber.webp"
                     media="(min-width: 1024px)"
@@ -29,16 +46,20 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Mark Webber</span> reacted to your recent post
-              <strong class="notification__post">My first tournament today!</strong>
-              <span class="notification__indicator"></span>
+              <a href="#"
+                 class="notification__author">Mark Webber</a> reacted to your recent post
+              <a href="#"
+                 class="notification__post">My first tournament today!</a>
+              <span class="notification__indicator"
+                    v-if="!areAllMessagesRead"></span>
             </h2>
             <p class="notification__time">1m ago</p>
           </section>
         </article>
       </li>
       <li class="notifications-list-item">
-        <article class="notification notification--unread">
+        <article class="notification"
+                 :class="{ 'notification--unread': !areAllMessagesRead }">
           <picture>
             <source srcset="./assets/images/avatar-angela-gray.webp"
                     media="(min-width: 1024px)"
@@ -52,15 +73,18 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Angela Gray</span> followed you
-              <span class="notification__indicator"></span>
+              <a href="#"
+                 class="notification__author">Angela Gray</a> followed you
+              <span class="notification__indicator"
+                    v-if="!areAllMessagesRead"></span>
             </h2>
             <p class="notification__time">5m ago</p>
           </section>
         </article>
       </li>
       <li class="notifications-list-item">
-        <article class="notification notification--unread">
+        <article class="notification"
+                 :class="{ 'notification--unread': !areAllMessagesRead }">
           <picture>
             <source srcset="./assets/images/avatar-jacob-thompson.webp"
                     media="(min-width: 1024px)"
@@ -74,10 +98,12 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Jacob Thompson</span> has joined your group
+              <a href="#"
+                 class="notification__author">Jacob Thompson</a> has joined your group
               <a href="#"
                  class="notification__group">Chess Club</a>
-              <span class="notification__indicator"></span>
+              <span class="notification__indicator"
+                    v-if="!areAllMessagesRead"></span>
             </h2>
             <p class="notification__time">1 day ago</p>
           </section>
@@ -98,18 +124,20 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Rizky Hasanuddin</span> sent you a private message
+              <a href="#"
+                 class="notification__author">Rizky Hasanuddin</a> sent you a private message
             </h2>
             <p class="notification__time">5 days ago</p>
-            <p class="notification__private-message">
+            <a class="notification__private-message"
+               href="#">
               Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
               I'm already having lots of fun and improving my game.
-            </p>
+            </a>
           </section>
         </article>
       </li>
       <li class="notifications-list-item">
-        <article class="notification">
+        <article class="notification notification--profile-pic">
           <picture>
             <source srcset="./assets/images/avatar-kimberly-smith.webp"
                     media="(min-width: 1024px)"
@@ -123,10 +151,22 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Kimberly Smith</span> commented on your picture
+              <a href="#"
+                 class="notification__author">Kimberly Smith</a> commented on your picture
             </h2>
             <p class="notification__time">1 week ago</p>
           </section>
+          <picture>
+            <source srcset="./assets/images/image-chess.webp"
+                    media="(min-width: 1024px)"
+                    width="45"
+                    height="45">
+            <img src="./assets/images/image-chess.webp"
+                 alt="My profile picture"
+                 class="notification__profile-picture"
+                 width="39"
+                 height="39">
+          </picture>
         </article>
       </li>
       <li class="notifications-list-item">
@@ -144,8 +184,10 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Nathan Peterson</span> reacted to your recent post
-              <strong class="notification__post ml--3">5 end-game strategies to increase your win rate</strong>
+              <a href="#"
+                 class="notification__author">Nathan Peterson</a> reacted to your recent post
+              <a href="#"
+                 class="notification__post ml--3">5 end-game strategies to increase your win rate</a>
             </h2>
             <p class="notification__time">2 weeks ago</p>
           </section>
@@ -166,7 +208,8 @@
           </picture>
           <section class="notification__content">
             <h2 class="notification__title">
-              <span class="notification__author">Anna Kim</span> left the group
+              <a href="#"
+                 class="notification__author">Anna Kim</a> left the group
               <a href="#"
                  class="notification__group">Chess Club</a>
             </h2>
@@ -189,6 +232,9 @@
 <style scoped>
 .main {
   padding: 2.4rem 1.6rem;
+  background-color: var(--color-white);
+  border-radius: 0;
+  transition: border-radius 0.25s;
 }
 
 .title-bar {
@@ -205,7 +251,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.5vw, 2.4rem);
   color: var(--color-very-dark-blue);
 }
 
@@ -230,8 +276,18 @@
   background-color: transparent;
   outline: 2px solid transparent;
   transition: outline-color 0.3s;
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   color: var(--color-dark-grayish-blue);
+  transition: color 0.25s;
+}
+
+.btn-read:disabled {
+  color: var(--color-grayish-blue);
+}
+
+.btn-read:hover:not(:disabled) {
+  cursor: pointer;
+  color: var(--color-primary-blue);
 }
 
 .btn-read:focus-visible {
@@ -239,13 +295,20 @@
 }
 
 .notification {
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   display: grid;
   grid-template-columns: 39px 1fr;
   gap: 1.3rem;
   margin-bottom: 1rem;
   padding: 1.6rem;
   border-radius: 8px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 2px transparent;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.notification--profile-pic {
+  grid-template-columns: 39px 1fr 39px;
 }
 
 .notifications-list-item:last-of-type .notification {
@@ -269,27 +332,45 @@
   background-color: var(--color-primary-red);
   display: inline-block;
   margin-left: 6px;
+  translate: 0 -25%;
 }
 
 .notification__author {
   font-weight: 800;
   color: var(--color-very-dark-blue);
   margin-right: 0.6rem;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.notification__author:hover {
+  color: var(--color-primary-blue);
+  cursor: pointer;
 }
 
 .notification__post,
 .notification__group {
   font-weight: 800;
   margin-left: 0.6rem;
+  text-decoration: none;
+}
+
+.notification__post {
+  color: var(--color-dark-grayish-blue);
+  transition: color 0.25s;
+}
+
+.notification__post:hover {
+  cursor: pointer;
+  color: var(--color-primary-blue);
+}
+
+.notification__group {
+  color: var(--color-primary-blue);
 }
 
 .ml--3 {
   margin-left: 0.3rem;
-}
-
-.notification__group {
-  text-decoration: none;
-  color: var(--color-primary-blue);
 }
 
 .notification__time {
@@ -302,16 +383,40 @@
   height: 39px;
 }
 
+.notification__profile-picture {
+  border-radius: 7px;
+}
+
 .notification__private-message {
+  display: block;
   border: 1px solid var(--color-light-grayish-blue-2);
   border-radius: 5px;
   padding: 1.6rem;
   margin-top: 1.2rem;
+  text-decoration: none;
+  color: var(--color-dark-grayish-blue);
+  transition: background-color 0.25s;
+}
+
+.notification__private-message:hover {
+  cursor: pointer;
+  background-color: var(--color-light-grayish-blue-1);
 }
 
 @media only screen and (width >=1024px) {
+  .main {
+    border-radius: 15px;
+    max-width: 73rem;
+    padding: 3.3rem 3rem 0;
+  }
+
   .notification {
     grid-template-columns: 45px 1fr;
+    margin-bottom: 0.8rem;
+  }
+
+  .notification--profile-pic {
+    grid-template-columns: 45px 1fr 45px;
   }
 
   .notification__avatar {
