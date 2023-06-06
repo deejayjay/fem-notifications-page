@@ -13,8 +13,8 @@
               class="btn-read">Mark all as read</button>
     </div>
     <!-- List of notifications -->
-    <ul>
-      <li>
+    <ul class="notifications-list">
+      <li class="notifications-list-item">
         <article class="notification notification--unread">
           <picture>
             <source srcset="./assets/images/avatar-mark-webber.webp"
@@ -37,7 +37,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification notification--unread">
           <picture>
             <source srcset="./assets/images/avatar-angela-gray.webp"
@@ -59,7 +59,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification notification--unread">
           <picture>
             <source srcset="./assets/images/avatar-jacob-thompson.webp"
@@ -83,7 +83,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification">
           <picture>
             <source srcset="./assets/images/avatar-rizky-hasanuddin.webp"
@@ -108,7 +108,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification">
           <picture>
             <source srcset="./assets/images/avatar-kimberly-smith.webp"
@@ -129,7 +129,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification">
           <picture>
             <source srcset="./assets/images/avatar-nathan-peterson.webp"
@@ -151,7 +151,7 @@
           </section>
         </article>
       </li>
-      <li>
+      <li class="notifications-list-item">
         <article class="notification">
           <picture>
             <source srcset="./assets/images/avatar-anna-kim.webp"
@@ -246,6 +246,10 @@
   margin-bottom: 1rem;
   padding: 1.6rem;
   border-radius: 8px;
+}
+
+.notifications-list-item:last-of-type .notification {
+  margin-bottom: 0;
 }
 
 .notification--unread {
